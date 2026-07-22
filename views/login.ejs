@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Login</h1>
+        <% if (error) { %>
+
+    <p class="error-message">
+        <%= error %>
+    </p>
+
+<% } %>
+
+        <form action="/login" method="POST">
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+            >
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    name="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <span onclick="togglePassword('loginPassword')">👁️</span>
+
+            </div>
+
+            <button>Login</button>
+
+        </form>
+
+        <p>
+
+            Don't have an account?
+
+            <a href="/register">Register</a>
+
+        </p>
+
+    </div>
+
+</div>
+
+<script src="/javascript/script.js"></script>
+
+</body>
+</html>
